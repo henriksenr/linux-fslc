@@ -33,7 +33,7 @@
 
 &lcdif {
     disp-dev = "mipi_dsi_samsung";
-    /*mxcfb1: fb@0 {
+    mxcfb1: fb@0 {
         compatible = "fsl,mxc_sdc_fb";
         disp_dev = "mipi_dsi";
         interface_pix_fmt = "RGB565";
@@ -42,7 +42,7 @@
         int_clk = <0>;
         late_init = <0>;
         status = "okay";
-        };*/
+        };
 };
 
 &mipi_dsi {

@@ -14,24 +14,6 @@
         reset-gpios = <&gpio6 15 GPIO_ACTIVE_LOW>;
         reset-delay-us = <1000>;
         #reset-cells = <0>;
-    }; 
-};
-     
-    &lcdif {
-        disp-dev = "mipi_dsi_samsung";
-    };
-    
-    &mipi_dsi {
-    //dev_id = <0>;
-    //disp_id = <0>;
-    pinctrl-names = "default";
-    pinctrl-0 = <&pinctrl_mipi_dsi_reset>;
-    lcd_panel = "TRULY-WVGA";
-    //lcd_panel = "TRULY-WVGA-TFT3P5581E";
-    resets = <&mipi_dsi_reset>;
-    mipi-phy = <&mipi-phy>;
-    disp-power-on = <&disp-power-on>;
-    status = "okay";
     };
    
     
@@ -47,7 +29,25 @@
         gpio = <&gpio6 14 0>;
         enable-active-high;
     };
-        
+};
+     
+    &lcdif {
+        disp-dev = "mipi_dsi_samsung";
+    };
+    
+    &mipi_dsi {
+    //dev_id = <0>;
+    //disp_id = <0>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&pinctrl_mipi_dsi_reset>;
+    lcd_panel = "TRULY-WVGA";
+    //lcd_panel = "TRULY-WVGA-TFT3P5581E";
+    resets = <&mipi_dsi_reset>;
+    phy = <&mipi-phy>;
+    power-on = <&disp-power-on>;
+    status = "okay";
+    };
+    
     /*
     mxcfb1: fb@0 {
         compatible = "fsl,mxc_sdc_fb";

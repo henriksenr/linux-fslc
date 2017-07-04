@@ -49,9 +49,9 @@
     
       mipi_phy: mipi-phy {
         compatible = "regulator-fixed";
-     /* phy_data_lanes = <2>;
+         phy_data_lanes = <2>;
         max_phy_clock = <80000000>;
-        phy_mode = "rgb";*/
+        phy_mode = "rgb";
         };
        
     mipi_dsi_pwr_on: mipi_dsi_power_on {

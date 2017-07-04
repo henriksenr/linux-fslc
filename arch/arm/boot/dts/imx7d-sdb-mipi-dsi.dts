@@ -17,14 +17,14 @@
     };
    
     
-    mipi-phy {
+    mipi_phy: mipi-phy {
         compatible = "regulator-fixed";
          /*phy_data_lanes = <2>;
         max_phy_clock = <80000000>;
         phy_mode = "rgb";*/
     }; 
        
-   disp-pwr-on {
+   disp_pwr_on: disp-pwr-on {
         compatible = "regulator-fixed";
         gpio = <&gpio6 14 0>;
         enable-active-high;
@@ -43,8 +43,8 @@
     lcd_panel = "TRULY-WVGA";
     //lcd_panel = "TRULY-WVGA-TFT3P5581E";
     resets = <&mipi_dsi_reset>;
-    mipi-phy = <&mipi-phy>;
-    disp-power-on = <&disp-power-on>;
+    mipi-phy = <&mipi_phy>;
+    disp-power-on = <&disp_power_on>;
     status = "okay";
     };
     

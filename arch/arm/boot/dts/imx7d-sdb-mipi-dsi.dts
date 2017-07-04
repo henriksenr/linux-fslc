@@ -19,13 +19,15 @@
     
     mipi_phy: mipi-phy {
         compatible = "regulator-fixed";
+        regulator-name = "mipi-phy";
          /*phy_data_lanes = <2>;
         max_phy_clock = <80000000>;
         phy_mode = "rgb";*/
     }; 
        
-   disp_power_on: disp-power-on {
+   reg_mipi_dsi_power_on: mipi_dsi_power_on {
         compatible = "regulator-fixed";
+        regulator-name = "mipi_dsi_power_on";
         gpio = <&gpio6 14 0>;
         enable-active-high;
     };
@@ -44,7 +46,7 @@
     //lcd_panel = "TRULY-WVGA-TFT3P5581E";
     resets = <&mipi_dsi_reset>;
     mipi-phy = <&mipi_phy>;
-    disp-power-on = <&disp_power_on>;
+    disp-power-on-supply = <&reg_mipi_dsi_power_on>;
     status = "okay";
     };
     

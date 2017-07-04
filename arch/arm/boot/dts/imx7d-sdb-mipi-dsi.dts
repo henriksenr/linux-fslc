@@ -30,7 +30,7 @@
     //lcd_panel = "TRULY-WVGA-TFT3P5581E";
     resets = <&mipi_dsi_reset>;
     mipi-phy;
-    disp_power_on =  1;
+    disp_power_on;
     status = "okay";
     };
     

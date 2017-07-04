@@ -14,6 +14,19 @@
         reset-gpios = <&gpio6 15 GPIO_ACTIVE_LOW>;
         reset-delay-us = <1000>;
         #reset-cells = <0>;
+    }; 
+    
+    mipi-phy: mipi_phy {
+        compatible = "regulator-fixed";
+         /*phy_data_lanes = <2>;
+        max_phy_clock = <80000000>;
+        phy_mode = "rgb";*/
+    }; 
+       
+   disp-pwr-on: disp_power_on {
+        compatible = "regulator-fixed";
+        gpio = <&gpio6 14 0>;
+        enable-active-high;
     };
 };
      
@@ -22,18 +35,19 @@
     };
     
     &mipi_dsi {
-    dev_id = <0>;
-    disp_id = <0>;
+    //dev_id = <0>;
+    //disp_id = <0>;
     pinctrl-names = "default";
     pinctrl-0 = <&pinctrl_mipi_dsi_reset>;
     lcd_panel = "TRULY-WVGA";
     //lcd_panel = "TRULY-WVGA-TFT3P5581E";
     resets = <&mipi_dsi_reset>;
-    mipi-phy;
-    disp_power_on;
+    mipi-phy = &mipi-phy;
+    disp-power-on = &disp-power-on;
     status = "okay";
     };
-    
+   
+        
     /*
     mxcfb1: fb@0 {
         compatible = "fsl,mxc_sdc_fb";
@@ -47,17 +61,5 @@
         };
     };   
     
-      mipi_phy: mipi-phy {
-        compatible = "regulator-fixed";
-         phy_data_lanes = <2>;
-        max_phy_clock = <80000000>;
-        phy_mode = "rgb";
-        };
-       
-    mipi_dsi_pwr_on: mipi_dsi_power_on {
-        compatible = "regulator-fixed";
-        regulator-name = "reg_mipi_dsi_pwr_on";
-        gpio = <&gpio6 14 0>;
-        enable-active-high;
-        };
+     
 */

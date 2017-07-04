@@ -15,19 +15,6 @@
         reset-delay-us = <1000>;
         #reset-cells = <0>;
     }; 
-    
-    mipi-phy: mipi_phy {
-        compatible = "regulator-fixed";
-         /*phy_data_lanes = <2>;
-        max_phy_clock = <80000000>;
-        phy_mode = "rgb";*/
-    }; 
-       
-   disp-pwr-on: disp_power_on {
-        compatible = "regulator-fixed";
-        gpio = <&gpio6 14 0>;
-        enable-active-high;
-    };
 };
      
     &lcdif {
@@ -47,6 +34,19 @@
     status = "okay";
     };
    
+    
+    mipi-phy: mipi_phy {
+        compatible = "regulator-fixed";
+         /*phy_data_lanes = <2>;
+        max_phy_clock = <80000000>;
+        phy_mode = "rgb";*/
+    }; 
+       
+   disp-pwr-on: disp_power_on {
+        compatible = "regulator-fixed";
+        gpio = <&gpio6 14 0>;
+        enable-active-high;
+    };
         
     /*
     mxcfb1: fb@0 {

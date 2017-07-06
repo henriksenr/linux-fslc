@@ -18,8 +18,7 @@
    
     
     mipi_phy: mipi-phy {
-        compatible = "regulator-fixed";
-        regulator-name = "mipi-phy";
+        compatible = "fsl,imx7d-mipi-dsi";
          /*phy_data_lanes = <2>;
         max_phy_clock = <80000000>;
         phy_mode = "rgb";*/
@@ -35,6 +34,7 @@
      
     &lcdif {
         disp-dev = "mipi_dsi_samsung";
+        compatible = "fsl,imx7d-mipi-dsi";
     };
     
     &mipi_dsi {

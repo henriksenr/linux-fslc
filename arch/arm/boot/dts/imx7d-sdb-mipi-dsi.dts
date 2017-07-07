@@ -30,6 +30,17 @@
         gpio = <&gpio6 14 0>;
         enable-active-high;
     };
+    
+    mxcfb1:fb@0{
+        compatible = "fsl,mxc_sdc_fb";
+        disp_dev = "mipi_dsi_samsung";
+        interface_pix_fmt = "RGB565";
+        mode_str = "TRULY-WVGA";
+        default_bpp = <16>;
+        int_clk = <0>;
+        lete_init = <0>;
+        status = "okay";
+    };
 };
      
     &lcdif {
@@ -47,13 +58,4 @@
     status = "okay";
     };
      
-    mxcfb1:fb@0{
-        compatible = "fsl,mxc_sdc_fb";
-        disp_dev = "mipi_dsi_samsung";
-        interface_pix_fmt = "RGB565";
-        mode_str = "TRULY-WVGA";
-        default_bpp = <16>;
-        int_clk = <0>;
-        lete_init = <0>;
-        status = "okay";
-    };
+    

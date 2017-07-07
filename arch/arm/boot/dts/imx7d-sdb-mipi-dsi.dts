@@ -41,7 +41,6 @@
         lete_init = <0>;
         status = "okay";
     };
-};
      
     &lcdif {
         disp-dev = "mipi_dsi_samsung";
@@ -57,5 +56,6 @@
     disp-power-on-supply = <&reg_mipi_dsi_power_on>;
     status = "okay";
     };
-     
+
+};     
     

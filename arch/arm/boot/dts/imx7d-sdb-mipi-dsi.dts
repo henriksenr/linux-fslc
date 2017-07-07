@@ -46,8 +46,7 @@
     disp-power-on-supply = <&reg_mipi_dsi_power_on>;
     status = "okay";
     };
-
- /*       
+     
     mxcfb1:fb@0{
         compatible = "fsl,mxc_sdc_fb";
         disp_dev = "mipi_dsi_samsung";
@@ -58,4 +57,3 @@
         lete_init = <0>;
         status = "okay";
     };
-*/

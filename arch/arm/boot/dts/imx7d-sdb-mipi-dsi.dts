@@ -8,7 +8,9 @@
 
 #include "imx7d-sdb.dts"
 
-/ { 
+/ {
+    compatible = "fsl,imx7d-mipi-dsi";
+    
     mipi_dsi_reset: mipi-dsi-reset {
         compatible = "gpio-reset";
         reset-gpios = <&gpio6 15 GPIO_ACTIVE_LOW>;

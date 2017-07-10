@@ -789,12 +789,13 @@ static int mipi_dsi_probe(struct platform_device *pdev)
 		dev_err(&pdev->dev, "failed to read lcd_panel property\n");
 		return ret;
 	}
-
+        /*
 	mipi_phy_reg = devm_regulator_get(&pdev->dev, "mipi-phy");
 	if (IS_ERR(mipi_phy_reg)) {
 		dev_err(&pdev->dev, "mipi phy power supply not found\n");
 		return ret;
 	}
+	
 
 	mipi_dsi->disp_power_on = devm_regulator_get(&pdev->dev,
 						"disp-power-on");
@@ -806,7 +807,7 @@ static int mipi_dsi_probe(struct platform_device *pdev)
 			return ret;
 		}
 	}
-
+       */
 	mipi_dsi->lcd_panel = kstrdup(lcd_panel, GFP_KERNEL);
 	if (!mipi_dsi->lcd_panel) {
 		dev_err(&pdev->dev, "failed to allocate lcd panel name\n");
